@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CaculatorWin</class>
+ <widget class="QWidget" name="CaculatorWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>440</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>124321</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Калькулятор</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../jwp/Ресурсы/cal.jpg</normaloff>../../../jwp/Ресурсы/cal.jpg</iconset>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>-1</y>
+     <width>431</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>История</string>
+    </attribute>
+    <widget class="QPushButton" name="pushButton_update">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>380</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Обновить результаты</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>11</y>
+       <width>411</width>
+       <height>361</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_copy">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>380</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Копировать</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Справочник</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_multi">
+     <property name="geometry">
+      <rect>
+       <x>-4</x>
+       <y>-1</y>
+       <width>431</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Ф. сокращенного умножения</string>
+      </attribute>
+      <widget class="QTextBrowser" name="textBrowser_multi">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>411</width>
+         <height>401</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Формулы сокращенного умножения:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Квадрата суммы&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: (a + b)&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;= a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;+ 2ab + b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Квадрата разности&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: (a − b)&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;= a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;− 2ab + b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Куба суммы&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: (a + b)&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;= a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;+ 3a2b + 3ab&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;+ b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Куба разности&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: (a − b)&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;= a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;− 3a2b + 3ab&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;− b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Разности квадратов&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; − b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = (a − b)(a + b)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Суммы кубов&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;+ b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;3 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;= (a + b)(a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;− ab + b&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Площади фигур</string>
+      </attribute>
+      <widget class="QTextBrowser" name="textBrowse_s">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>411</width>
+         <height>401</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Формулы площадей фигур:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Квадрат&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Прямоугольник&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = ab&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Треугольник&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * ah&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * ab * sin Y&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * ac * sin B&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * bc * sin A&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Параллелограмма&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = ah&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = ab * sin A&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * sin Y&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Ромба:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = ah&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = a&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * sin A&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Трапеция&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/2 * (a + b) * h&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Круг&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = п * r&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;S = 1/3 * п * d&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Таблица квадратов</string>
+      </attribute>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Калькулятор</string>
+    </attribute>
+    <widget class="QTextBrowser" name="CalculatorDisplay">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>421</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>149</y>
+       <width>421</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pushButton2">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButton0">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QPushButton" name="pushButton_leftbrackets">
+        <property name="text">
+         <string>(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton8">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QPushButton" name="pushButton_Clear">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton4">
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton5">
+        <property name="text">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="pushButton_cos">
+        <property name="text">
+         <string>cos(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="pushButton_dot">
+        <property name="text">
+         <string>.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButton1">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButton_Add">
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButton_Multiply">
+        <property name="text">
+         <string>*</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="pushButton_div">
+        <property name="text">
+         <string>/</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="pushButton_rightbrackets">
+        <property name="text">
+         <string>)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QPushButton" name="pushButton_mod">
+        <property name="text">
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="pushButton_sin">
+        <property name="text">
+         <string>sin(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButton3">
+        <property name="text">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton6">
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton7">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="pushButton_Minus">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="3">
+       <widget class="QPushButton" name="pushButton_ctg">
+        <property name="text">
+         <string>ctg(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QPushButton" name="pushButton_tg">
+        <property name="text">
+         <string>tan(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QPushButton" name="pushButton_Cal">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Настройки</string>
+    </attribute>
+    <widget class="QComboBox" name="theme">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>190</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>dark_amber</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_blue</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_cyan</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_lightgreen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_pink</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_purple</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_red</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_teal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dark_yellow</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_amber</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_blue</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_cyan</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_cyan_500</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_lightgreen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_pink</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_purple</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_red</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_teal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>light_yellow</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>421</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Темы&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>230</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сменить тему</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Add</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Minus</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Multiply</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_div</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton1</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>157</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton2</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton3</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_dot</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton4</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>38</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton5</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton6</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_mod</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>269</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton7</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton8</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton9</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton0</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>29</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_leftbrackets</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>98</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_rightbrackets</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>CalObjPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>292</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>190</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Cal</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>ExecuteCalculate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Clear</sender>
+   <signal>clicked()</signal>
+   <receiver>CaculatorWin</receiver>
+   <slot>ClearInput()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>306</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>digitPressed()</slot>
+  <slot>digitPressed(digit)</slot>
+  <slot>CalObjPressed()</slot>
+  <slot>ExecuteCalculate()</slot>
+  <slot>ClearInput()</slot>
+ </slots>
+</ui>
