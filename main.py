@@ -6,6 +6,8 @@ from qt_material import apply_stylesheet
 from ui_Calculator import Ui_CaculatorWin
 import sqlite3
 
+# Эконка для Windows 10 версии.
+
 try:
     # Включите в блок try/except, если вы также нацелены на Mac/Linux
     from PyQt5.QtWinExtras import QtWin
@@ -43,12 +45,6 @@ class Calculator(QtWidgets.QWidget, Ui_CaculatorWin):
         self.CalculatorDisplay.insertPlainText(character)
         self.expression += character
 
-    def ctg_eval(self):
-        se = str(self.expression)
-        sef = se.find("ctg(")
-        ctg = str(se[sef:se[sef:].find(")")])
-
-
     # Вычисление результата и обработка ошибок.
 
     def ExecuteCalculate(self):
@@ -56,6 +52,8 @@ class Calculator(QtWidgets.QWidget, Ui_CaculatorWin):
 
         if "()" in db_request:
             db_request = db_request[2::]
+        if db_request == "":
+            db_request = None
         self.CalculatorDisplay.append("=")
         global_area = {}
         try:
@@ -94,15 +92,17 @@ class Calculator(QtWidgets.QWidget, Ui_CaculatorWin):
         results = cur.execute("SELECT * FROM Results").fetchall()
 
         row = len(results)
-        self.tableWidget.setRowCount(row)
+        self.TableHistory.setRowCount(row)
 
         for i, elem in enumerate(results):
             for j, val in enumerate(elem):
                 if j == 2 and val == "":
-                    self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem("Ошибка"))
+                    self.TableHistory.setItem(i, j, QtWidgets.QTableWidgetItem("Ошибка"))
                 else:
-                    self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(val)))
+                    self.TableHistory.setItem(i, j, QtWidgets.QTableWidgetItem(str(val)))
         self.modified = {}
+
+    # Первоначальная установка темы.
 
     def Set_Theme(self):
         cur1 = self.con_t.cursor()
@@ -110,15 +110,19 @@ class Calculator(QtWidgets.QWidget, Ui_CaculatorWin):
         apply_stylesheet(app, theme=f'{current_theme}.xml')
         self.modified = {}
 
+    # Копирование элементов истроии.
+
     def copy_elem(self):
         # Получаем список элементов без повторов и их id
-        rows = list(set([el.row() for el in self.tableWidget.selectedItems()]))
-        ids = [self.tableWidget.item(el, 0).text() for el in rows]
+        rows = list(set([el.row() for el in self.TableHistory.selectedItems()]))
+        ids = [self.TableHistory.item(el, 0).text() for el in rows]
         # Не забываем зафиксировать изменения
         cur = self.con_r.cursor()
         req = cur.execute("SELECT Req FROM Results WHERE id = ?", ids).fetchall()
         self.CalculatorDisplay.insertPlainText(str(req)[3:-4])
         self.con_r.commit()
+
+    # Изменение темы.
 
     def change_theme(self):
         cur1 = self.con_t.cursor()

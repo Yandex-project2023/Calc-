@@ -36,197 +36,275 @@ class Ui_CaculatorWin(object):
 
         # Инициализация вкладок программы.
 
-        self.tabWidget = QtWidgets.QTabWidget(CaculatorWin)
-        self.tabWidget.setGeometry(QtCore.QRect(6, -1, 431, 451))
-        self.tabWidget.setObjectName("tabWidget")
+        self.TabsMain = QtWidgets.QTabWidget(CaculatorWin)
+        self.TabsMain.setGeometry(QtCore.QRect(6, -1, 431, 451))
+        self.TabsMain.setObjectName("TabsMain")
 
-        self.tab_2 = QtWidgets.QWidget()
-        self.tab_2.setObjectName("tab_2")
+        # Создание вкладки с историей.
 
-        self.pushButton_update = QtWidgets.QPushButton(self.tab_2)
-        self.pushButton_update.setGeometry(QtCore.QRect(0, 375, 221, 41))
-        self.pushButton_update.setObjectName("pushButton_update")
+        self.TabHistory = QtWidgets.QWidget()
+        self.TabHistory.setObjectName("TabHistory")
 
-        self.tableWidget = QtWidgets.QTableWidget(self.tab_2)
-        self.tableWidget.setGeometry(QtCore.QRect(5, 11, 411, 355))
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(3)
-        self.tableWidget.setRowCount(0)
+        # Кнопка для обновления истории.
 
-        self.pushButton_copy = QtWidgets.QPushButton(self.tab_2)
-        self.pushButton_copy.setGeometry(QtCore.QRect(230, 375, 191, 41))
-        self.pushButton_copy.setObjectName("pushButton_copy")
+        self.ButtonUpdate = QtWidgets.QPushButton(self.TabHistory)
+        self.ButtonUpdate.setGeometry(QtCore.QRect(0, 375, 221, 41))
+        self.ButtonUpdate.setObjectName("ButtonUpdate")
 
-        self.tabWidget.addTab(self.tab_2, "")
-        self.tab_3 = QtWidgets.QWidget()
-        self.tab_3.setObjectName("tab_3")
+        # Таблица для отображения истории.
 
-        self.tabWidget_multi = QtWidgets.QTabWidget(self.tab_3)
-        self.tabWidget_multi.setGeometry(QtCore.QRect(-4, -1, 431, 431))
-        self.tabWidget_multi.setObjectName("tabWidget_multi")
+        self.TableHistory = QtWidgets.QTableWidget(self.TabHistory)
+        self.TableHistory.setGeometry(QtCore.QRect(5, 11, 411, 355))
+        self.TableHistory.setObjectName("TableHistory")
+        self.TableHistory.setColumnCount(3)  # Количество колонок.
+        self.TableHistory.setRowCount(0)
 
-        self.tab_4 = QtWidgets.QWidget()
-        self.tab_4.setObjectName("tab_4")
+        # Кнопка для копирования запросов в окно калькулятора.
 
-        self.textBrowser_2 = QtWidgets.QTextBrowser(self.tab_4)
-        self.textBrowser_2.setGeometry(QtCore.QRect(10, 5, 411, 380))
-        self.textBrowser_2.setObjectName("textBrowser_2")
+        self.ButtonCopy = QtWidgets.QPushButton(self.TabHistory)
+        self.ButtonCopy.setGeometry(QtCore.QRect(230, 375, 191, 41))
+        self.ButtonCopy.setObjectName("ButtonCopy")
 
-        self.tabWidget_multi.addTab(self.tab_4, "")
+        # Создание вкладки справочника.
 
-        self.tab_5 = QtWidgets.QWidget()
-        self.tab_5.setObjectName("tab_5")
+        self.TabsMain.addTab(self.TabHistory, "")
+        self.TabGuide = QtWidgets.QWidget()
+        self.TabGuide.setObjectName("TabGuide")
 
-        self.textBrowser = QtWidgets.QTextBrowser(self.tab_5)
-        self.textBrowser.setGeometry(QtCore.QRect(10, 5, 411, 380))
-        self.textBrowser.setObjectName("textBrowser")
+        # Создание вкладок справочника.
 
-        self.tabWidget_multi.addTab(self.tab_5, "")
+        self.TabsCo = QtWidgets.QTabWidget(self.TabGuide)
+        self.TabsCo.setGeometry(QtCore.QRect(-4, -1, 431, 431))
+        self.TabsCo.setObjectName("TabsCo")
 
-        self.tabWidget.addTab(self.tab_3, "")
+        # Создание вкладки с ф-ми сок-ного умножения.
 
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
+        self.TabMulti = QtWidgets.QWidget()
+        self.TabMulti.setObjectName("TabMulti")
 
-        self.CalculatorDisplay = QtWidgets.QTextBrowser(self.tab)
+        # Текст вкладки с ф-ми сок-ного умножения.
+
+        self.TextMulti = QtWidgets.QTextBrowser(self.TabMulti)
+        self.TextMulti.setGeometry(QtCore.QRect(10, 5, 411, 380))
+        self.TextMulti.setObjectName("TextMulti")
+
+        self.TabsCo.addTab(self.TabMulti, "")
+
+        # Создание вкладки с ф-ми площадей фигур.
+
+        self.TabS = QtWidgets.QWidget()
+        self.TabS.setObjectName("TabS")
+
+        # Текст вкладки с ф-ми площадей фигур.
+
+        self.TextS = QtWidgets.QTextBrowser(self.TabS)
+        self.TextS.setGeometry(QtCore.QRect(10, 5, 411, 380))
+        self.TextS.setObjectName("TextS")
+
+        self.TabsCo.addTab(self.TabS, "")
+
+        self.TabsMain.addTab(self.TabGuide, "")
+
+        # Создание вкладки калькулятора.
+
+        self.TabsCalc = QtWidgets.QWidget()
+        self.TabsCalc.setObjectName("TabsCalc")
+
+        # Создание дисплея калькулятора.
+
+        self.CalculatorDisplay = QtWidgets.QTextBrowser(self.TabsCalc)
         self.CalculatorDisplay.setGeometry(QtCore.QRect(4, 10, 421, 131))
         self.CalculatorDisplay.setObjectName("CalculatorDisplay")
 
-        self.gridLayoutWidget = QtWidgets.QWidget(self.tab)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(4, 149, 421, 261))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        # Создание групп кнопок.
 
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.LayoutWidget = QtWidgets.QWidget(self.TabsCalc)
+        self.LayoutWidget.setGeometry(QtCore.QRect(4, 149, 421, 261))
+        self.LayoutWidget.setObjectName("LayoutWidget")
 
-        self.pushButton2 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.GroupButtons = QtWidgets.QGridLayout(self.LayoutWidget)
+        self.GroupButtons.setContentsMargins(0, 0, 0, 0)
+        self.GroupButtons.setObjectName("GroupButtons")
+
+        # Кнопка 2.
+
+        self.pushButton2 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton2.setObjectName("pushButton2")
 
-        self.gridLayout_2.addWidget(self.pushButton2, 2, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton2, 2, 1, 1, 1)
 
-        self.pushButton0 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 0.
+
+        self.pushButton0 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton0.setObjectName("pushButton0")
 
-        self.gridLayout_2.addWidget(self.pushButton0, 6, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton0, 6, 0, 1, 1)
 
-        self.pushButton_leftbrackets = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка открывающая скобка.
+
+        self.pushButton_leftbrackets = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_leftbrackets.setObjectName("pushButton_leftbrackets")
 
-        self.gridLayout_2.addWidget(self.pushButton_leftbrackets, 6, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_leftbrackets, 6, 1, 1, 1)
 
-        self.pushButton8 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 8.
+
+        self.pushButton8 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton8.setObjectName("pushButton8")
 
-        self.gridLayout_2.addWidget(self.pushButton8, 4, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton8, 4, 1, 1, 1)
 
-        self.pushButton_Clear = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка очищения.
+
+        self.pushButton_Clear = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_Clear.setObjectName("pushButton_Clear")
 
-        self.gridLayout_2.addWidget(self.pushButton_Clear, 4, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_Clear, 4, 3, 1, 1)
 
-        self.pushButton4 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 4.
+
+        self.pushButton4 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton4.setObjectName("pushButton4")
 
-        self.gridLayout_2.addWidget(self.pushButton4, 3, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton4, 3, 0, 1, 1)
 
-        self.pushButton9 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 9.
+
+        self.pushButton9 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton9.setObjectName("pushButton9")
 
-        self.gridLayout_2.addWidget(self.pushButton9, 4, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton9, 4, 2, 1, 1)
 
-        self.pushButton5 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 5.
+
+        self.pushButton5 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton5.setObjectName("pushButton5")
 
-        self.gridLayout_2.addWidget(self.pushButton5, 3, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton5, 3, 1, 1, 1)
 
-        self.pushButton_cos = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка косинуса.
+
+        self.pushButton_cos = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_cos.setObjectName("pushButton_cos")
 
-        self.gridLayout_2.addWidget(self.pushButton_cos, 7, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_cos, 7, 1, 1, 1)
 
-        self.pushButton_dot = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка точки.
+
+        self.pushButton_dot = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_dot.setObjectName("pushButton_dot")
 
-        self.gridLayout_2.addWidget(self.pushButton_dot, 2, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_dot, 2, 3, 1, 1)
 
-        self.pushButton1 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 1.
+
+        self.pushButton1 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton1.setObjectName("pushButton1")
 
-        self.gridLayout_2.addWidget(self.pushButton1, 2, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton1, 2, 0, 1, 1)
 
-        self.pushButton_Add = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка плюса.
+
+        self.pushButton_Add = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_Add.setObjectName("pushButton_Add")
 
-        self.gridLayout_2.addWidget(self.pushButton_Add, 0, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_Add, 0, 0, 1, 1)
 
-        self.pushButton_Multiply = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка умножение.
+
+        self.pushButton_Multiply = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_Multiply.setObjectName("pushButton_Multiply")
 
-        self.gridLayout_2.addWidget(self.pushButton_Multiply, 0, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_Multiply, 0, 2, 1, 1)
 
-        self.pushButton_div = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка деления.
+
+        self.pushButton_div = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_div.setObjectName("pushButton_div")
 
-        self.gridLayout_2.addWidget(self.pushButton_div, 0, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_div, 0, 3, 1, 1)
 
-        self.pushButton_rightbrackets = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка закрывающей скобки.
+
+        self.pushButton_rightbrackets = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_rightbrackets.setObjectName("pushButton_rightbrackets")
 
-        self.gridLayout_2.addWidget(self.pushButton_rightbrackets, 6, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_rightbrackets, 6, 2, 1, 1)
 
-        self.pushButton_mod = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка остаточного деления.
+
+        self.pushButton_mod = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_mod.setObjectName("pushButton_mod")
 
-        self.gridLayout_2.addWidget(self.pushButton_mod, 3, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_mod, 3, 3, 1, 1)
 
-        self.pushButton_sin = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка синуса.
+
+        self.pushButton_sin = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_sin.setObjectName("pushButton_sin")
 
-        self.gridLayout_2.addWidget(self.pushButton_sin, 7, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_sin, 7, 0, 1, 1)
 
-        self.pushButton3 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 3.
+
+        self.pushButton3 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton3.setObjectName("pushButton3")
 
-        self.gridLayout_2.addWidget(self.pushButton3, 2, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton3, 2, 2, 1, 1)
 
-        self.pushButton6 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 6.
+
+        self.pushButton6 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton6.setObjectName("pushButton6")
 
-        self.gridLayout_2.addWidget(self.pushButton6, 3, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton6, 3, 2, 1, 1)
 
-        self.pushButton7 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка 7.
+
+        self.pushButton7 = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton7.setObjectName("pushButton7")
 
-        self.gridLayout_2.addWidget(self.pushButton7, 4, 0, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton7, 4, 0, 1, 1)
 
-        self.pushButton_Minus = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка минуса.
+
+        self.pushButton_Minus = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_Minus.setObjectName("pushButton_Minus")
 
-        self.gridLayout_2.addWidget(self.pushButton_Minus, 0, 1, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_Minus, 0, 1, 1, 1)
 
-        self.pushButton_ctg = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.pushButton_ctg.setObjectName("pushButton_ctg")
+        # Кнопка заполнения.
 
-        self.gridLayout_2.addWidget(self.pushButton_ctg, 7, 3, 1, 1)
+        self.pushButton_n = QtWidgets.QPushButton(self.LayoutWidget)
+        self.pushButton_n.setObjectName("pushButton_n")
 
-        self.pushButton_tan = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.GroupButtons.addWidget(self.pushButton_n, 7, 3, 1, 1)
+
+        # Кнопка тангенса.
+
+        self.pushButton_tan = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_tan.setObjectName("pushButton_tan")
 
-        self.gridLayout_2.addWidget(self.pushButton_tan, 7, 2, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_tan, 7, 2, 1, 1)
 
-        self.pushButton_Cal = QtWidgets.QPushButton(self.gridLayoutWidget)
+        # Кнопка решения.
+
+        self.pushButton_Cal = QtWidgets.QPushButton(self.LayoutWidget)
         self.pushButton_Cal.setStyleSheet("")
         self.pushButton_Cal.setObjectName("pushButton_Cal")
 
-        self.gridLayout_2.addWidget(self.pushButton_Cal, 6, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_Cal, 6, 3, 1, 1)
 
-        self.tabWidget.addTab(self.tab, "")
+        self.TabsMain.addTab(self.TabsCalc, "")
 
-        self.tab_7 = QtWidgets.QWidget()
-        self.tab_7.setObjectName("tab_7")
+        # Создание вкладки настроек.
 
-        self.theme = QtWidgets.QComboBox(self.tab_7)
+        self.TabSettings = QtWidgets.QWidget()
+        self.TabSettings.setObjectName("TabSettings")
+
+        # Варианты тем.
+
+        self.theme = QtWidgets.QComboBox(self.TabSettings)
         self.theme.setGeometry(QtCore.QRect(120, 190, 181, 31))
         self.theme.setObjectName("theme")
         self.theme.addItem("")
@@ -249,19 +327,23 @@ class Ui_CaculatorWin(object):
         self.theme.addItem("")
         self.theme.addItem("")
 
-        self.label = QtWidgets.QLabel(self.tab_7)
+        self.label = QtWidgets.QLabel(self.TabSettings)
         self.label.setGeometry(QtCore.QRect(0, 10, 421, 81))
         self.label.setObjectName("label")
 
-        self.pushButton = QtWidgets.QPushButton(self.tab_7)
-        self.pushButton.setGeometry(QtCore.QRect(130, 230, 161, 41))
-        self.pushButton.setObjectName("pushButton")
+        # Кнопка переключения темы.
 
-        self.tabWidget.addTab(self.tab_7, "")
+        self.ChangeTheme = QtWidgets.QPushButton(self.TabSettings)
+        self.ChangeTheme.setGeometry(QtCore.QRect(130, 230, 161, 41))
+        self.ChangeTheme.setObjectName("ChangeTheme")
+
+        self.TabsMain.addTab(self.TabSettings, "")
+
+        # Привязка кнопок к функциям.
 
         self.retranslateUi(CaculatorWin)
-        self.tabWidget.setCurrentIndex(0)
-        self.tabWidget_multi.setCurrentIndex(2)
+        self.TabsMain.setCurrentIndex(0)
+        self.TabsCo.setCurrentIndex(2)
         self.pushButton_Add.clicked.connect(CaculatorWin.CalObjPressed) # type: ignore
         self.pushButton_Minus.clicked.connect(CaculatorWin.CalObjPressed) # type: ignore
         self.pushButton_Multiply.clicked.connect(CaculatorWin.CalObjPressed) # type: ignore
@@ -282,21 +364,23 @@ class Ui_CaculatorWin(object):
         self.pushButton_rightbrackets.clicked.connect(CaculatorWin.CalObjPressed) # type: ignore
         self.pushButton_Cal.clicked.connect(CaculatorWin.ExecuteCalculate) # type: ignore
         self.pushButton_Clear.clicked.connect(CaculatorWin.ClearInput) # type: ignore
-        self.pushButton_update.clicked.connect(CaculatorWin.Update_Result)
-        self.pushButton_copy.clicked.connect(CaculatorWin.copy_elem)
+        self.ButtonUpdate.clicked.connect(CaculatorWin.Update_Result)
+        self.ButtonCopy.clicked.connect(CaculatorWin.copy_elem)
         self.pushButton_sin.clicked.connect(CaculatorWin.CalObjPressed)
         self.pushButton_cos.clicked.connect(CaculatorWin.CalObjPressed)
         self.pushButton_tan.clicked.connect(CaculatorWin.CalObjPressed)
-        self.pushButton.clicked.connect(CaculatorWin.change_theme)
+        self.ChangeTheme.clicked.connect(CaculatorWin.change_theme)
         QtCore.QMetaObject.connectSlotsByName(CaculatorWin)
 
     def retranslateUi(self, CaculatorWin):
+        # Перевод текста программы.
+
         _translate = QtCore.QCoreApplication.translate
         CaculatorWin.setWindowTitle(_translate("CaculatorWin", "Calc+"))
-        self.pushButton_update.setText(_translate("CaculatorWin", "Обновить результаты"))
-        self.pushButton_copy.setText(_translate("CaculatorWin", "Копировать"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("CaculatorWin", "История"))
-        self.textBrowser_2.setHtml(_translate("CaculatorWin", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.ButtonUpdate.setText(_translate("CaculatorWin", "Обновить результаты"))
+        self.ButtonCopy.setText(_translate("CaculatorWin", "Копировать"))
+        self.TabsMain.setTabText(self.TabsMain.indexOf(self.TabHistory), _translate("CaculatorWin", "История"))
+        self.TextMulti.setHtml(_translate("CaculatorWin", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
@@ -307,8 +391,8 @@ class Ui_CaculatorWin(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; text-decoration: underline;\">Куба разности</span><span style=\" font-size:10pt;\">: (a − b)</span><span style=\" font-size:10pt; vertical-align:super;\">3 </span><span style=\" font-size:10pt;\">= a</span><span style=\" font-size:10pt; vertical-align:super;\">3 </span><span style=\" font-size:10pt;\">− 3a2b + 3ab</span><span style=\" font-size:10pt; vertical-align:super;\">2 </span><span style=\" font-size:10pt;\">− b</span><span style=\" font-size:10pt; vertical-align:super;\">3</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; text-decoration: underline;\">Разности квадратов</span><span style=\" font-size:10pt;\">: a</span><span style=\" font-size:10pt; vertical-align:super;\">2</span><span style=\" font-size:10pt;\"> − b</span><span style=\" font-size:10pt; vertical-align:super;\">2</span><span style=\" font-size:10pt;\"> = (a − b)(a + b)</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; text-decoration: underline;\">Суммы кубов</span><span style=\" font-size:10pt;\">: a</span><span style=\" font-size:10pt; vertical-align:super;\">3 </span><span style=\" font-size:10pt;\">+ b</span><span style=\" font-size:10pt; vertical-align:super;\">3 </span><span style=\" font-size:10pt;\">= (a + b)(a</span><span style=\" font-size:10pt; vertical-align:super;\">2 </span><span style=\" font-size:10pt;\">− ab + b</span><span style=\" font-size:10pt; vertical-align:super;\">2</span><span style=\" font-size:10pt;\">)</span></p></body></html>"))
-        self.tabWidget_multi.setTabText(self.tabWidget_multi.indexOf(self.tab_4), _translate("CaculatorWin", "Ф. сокращенного умножения"))
-        self.textBrowser.setHtml(_translate("CaculatorWin", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.TabsCo.setTabText(self.TabsCo.indexOf(self.TabMulti), _translate("CaculatorWin", "Ф. сокращенного умножения"))
+        self.TextS.setHtml(_translate("CaculatorWin", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
@@ -336,8 +420,8 @@ class Ui_CaculatorWin(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; text-decoration: underline;\">Круг</span><span style=\" font-size:10pt;\">:</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">S = п * r</span><span style=\" font-size:10pt; vertical-align:super;\">2</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">S = 1/3 * п * d</span><span style=\" font-size:10pt; vertical-align:super;\">2</span></p></body></html>"))
-        self.tabWidget_multi.setTabText(self.tabWidget_multi.indexOf(self.tab_5), _translate("CaculatorWin", "Площади фигур"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("CaculatorWin", "Справочник"))
+        self.TabsCo.setTabText(self.TabsCo.indexOf(self.TabS), _translate("CaculatorWin", "Площади фигур"))
+        self.TabsMain.setTabText(self.TabsMain.indexOf(self.TabGuide), _translate("CaculatorWin", "Справочник"))
         self.pushButton2.setText(_translate("CaculatorWin", "2"))
         self.pushButton0.setText(_translate("CaculatorWin", "0"))
         self.pushButton_leftbrackets.setText(_translate("CaculatorWin", "("))
@@ -359,10 +443,10 @@ class Ui_CaculatorWin(object):
         self.pushButton6.setText(_translate("CaculatorWin", "6"))
         self.pushButton7.setText(_translate("CaculatorWin", "7"))
         self.pushButton_Minus.setText(_translate("CaculatorWin", " - "))
-        self.pushButton_ctg.setText(_translate("CaculatorWin", "--------"))
+        self.pushButton_n.setText(_translate("CaculatorWin", "--------"))
         self.pushButton_tan.setText(_translate("CaculatorWin", "tan("))
         self.pushButton_Cal.setText(_translate("CaculatorWin", "="))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("CaculatorWin", "Калькулятор"))
+        self.TabsMain.setTabText(self.TabsMain.indexOf(self.TabsCalc), _translate("CaculatorWin", "Калькулятор"))
         self.theme.setItemText(0, _translate("CaculatorWin", "dark_amber"))
         self.theme.setItemText(1, _translate("CaculatorWin", "dark_blue"))
         self.theme.setItemText(2, _translate("CaculatorWin", "dark_cyan"))
@@ -384,5 +468,5 @@ class Ui_CaculatorWin(object):
         self.theme.setItemText(18, _translate("CaculatorWin", "light_yellow"))
         self.label.setText(_translate("CaculatorWin",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600;\">Темы</span></p></body></html>"))
-        self.pushButton.setText(_translate("CaculatorWin", "Сменить тему"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("CaculatorWin", "Настройки"))
+        self.ChangeTheme.setText(_translate("CaculatorWin", "Сменить тему"))
+        self.TabsMain.setTabText(self.TabsMain.indexOf(self.TabSettings), _translate("CaculatorWin", "Настройки"))
