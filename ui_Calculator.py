@@ -273,12 +273,12 @@ class Ui_CaculatorWin(object):
 
         self.GroupButtons.addWidget(self.pushButton_Minus, 0, 1, 1, 1)
 
-        # Кнопка заполнения.
+        # Кнопка квадратного корня.
 
-        self.pushButton_n = QtWidgets.QPushButton(self.LayoutWidget)
-        self.pushButton_n.setObjectName("pushButton_n")
+        self.pushButton_isqrt = QtWidgets.QPushButton(self.LayoutWidget)
+        self.pushButton_isqrt.setObjectName("pushButton_isqrt")
 
-        self.GroupButtons.addWidget(self.pushButton_n, 7, 3, 1, 1)
+        self.GroupButtons.addWidget(self.pushButton_isqrt, 7, 3, 1, 1)
 
         # Кнопка тангенса.
 
@@ -369,6 +369,7 @@ class Ui_CaculatorWin(object):
         self.pushButton_sin.clicked.connect(CaculatorWin.CalObjPressed)
         self.pushButton_cos.clicked.connect(CaculatorWin.CalObjPressed)
         self.pushButton_tan.clicked.connect(CaculatorWin.CalObjPressed)
+        self.pushButton_isqrt.clicked.connect(CaculatorWin.CalObjPressed)
         self.ChangeTheme.clicked.connect(CaculatorWin.change_theme)
         QtCore.QMetaObject.connectSlotsByName(CaculatorWin)
 
@@ -443,7 +444,7 @@ class Ui_CaculatorWin(object):
         self.pushButton6.setText(_translate("CaculatorWin", "6"))
         self.pushButton7.setText(_translate("CaculatorWin", "7"))
         self.pushButton_Minus.setText(_translate("CaculatorWin", " - "))
-        self.pushButton_n.setText(_translate("CaculatorWin", "--------"))
+        self.pushButton_isqrt.setText(_translate("CaculatorWin", "isqrt("))
         self.pushButton_tan.setText(_translate("CaculatorWin", "tan("))
         self.pushButton_Cal.setText(_translate("CaculatorWin", "="))
         self.TabsMain.setTabText(self.TabsMain.indexOf(self.TabsCalc), _translate("CaculatorWin", "Калькулятор"))
