@@ -1,5 +1,5 @@
 import sys
-from math import cos, sin, tan
+from math import cos, sin, tan, isqrt
 from PyQt5 import QtWidgets
 from PyQt5.uic.properties import QtGui
 from qt_material import apply_stylesheet
