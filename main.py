@@ -36,12 +36,21 @@ class Calculator(QtWidgets.QWidget, Ui_CaculatorWin):
     # Вывод нажатого символа на экран.
 
     def CalObjPressed(self):
+        character = ""
         global db_request
         if self.resultfinished:
             self.ClearInput()
         pbutton = self.sender()
-        character = pbutton.text()
-        db_request += character
+        if pbutton.text() == ".":
+            char_list = list(self.expression.split(" "))
+            if "." in char_list[-1]:
+                pass
+            else:
+                character = pbutton.text()
+                db_request += character
+        else:
+            character = pbutton.text()
+            db_request += character
         self.CalculatorDisplay.insertPlainText(character)
         self.expression += character
 
